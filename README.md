@@ -5,7 +5,7 @@ The application is **Dockerized** for easy deployment and reproducibility.
 The prediction model is trained using **scikit-learn**.
 
 ---
-I am just testing githubaction 
+I am just testing the github actions 
 
 ## 🛠 Tools & Technologies
 
