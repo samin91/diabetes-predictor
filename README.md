@@ -15,23 +15,18 @@ The prediction model is trained using **scikit-learn**.
 - **Docker** – containerization for consistent deployment  
 - **Pydantic** – data validation for API input  
 
----
-
 ## 📁 Project Structure
+```
 diabetes-predictor/
 ├── app/
 │ ├── main.py # FastAPI application
-│ ├── models.py # Pydantic schemas
-│ └── routes/ # Optional: modular endpoints
+│ ├── __init__.py 
 ├── models/
 │ └── diabetes_model.pkl
 ├── requirements.txt # Python dependencies
 ├── Dockerfile # Docker build instructions
 ├── README.md
-└── tests/ # Optional: unit tests
-
-
----
+```
 
 ## ⚡ Features
 
