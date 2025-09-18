@@ -64,6 +64,7 @@ Run the FastAPI app:
 python -m uvicorn app.main:app --reload --port 8000
 
 
+
 Visit in browser:
 
 Health check: http://127.0.0.1:8000/
