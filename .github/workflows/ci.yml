@@ -51,4 +51,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: samin91/diabetes-predictor:latest
+          tags: sambakster91/diabetes-predictor:latest
