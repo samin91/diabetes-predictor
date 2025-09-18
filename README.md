@@ -47,31 +47,31 @@ diabetes-predictor/
 
 Clone the repository:
 
-```bash
+```
 git clone https://github.com/<your-username>/diabetes-predictor.git
 cd diabetes-predictor
-
+```
 Create a virtual environment and install dependencies:
 
-```bash
+```
 python -m venv venv
 source venv/bin/activate      # On macOS/Linux
 venv\Scripts\activate         # On Windows
 pip install --upgrade pip
 pip install -r requirements.txt
-
+```
 
 Run the FastAPI app:
 
-```bash
+```
 python -m uvicorn app.main:app --reload --port 8000
-
+```
 
 Visit in browser:
-
+```
 Health check: http://127.0.0.1:8000/
 
 Interactive docs: http://127.0.0.1:8000/docs
-
+```
 
 
