@@ -1,9 +1,11 @@
 # app/main.py
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from pydantic import BaseModel
 import pickle
 import numpy as np
 import os
+import logging
+import time
 
 # Define input data schema
 class PatientData(BaseModel):
@@ -42,10 +44,29 @@ app = FastAPI(
     version="1.0.0"
 )
 
+# Configure logger
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s"
+)
+logger = logging.getLogger(__name__)
+
+
 # Load the trained model
 model_path = os.path.join("models", "diabetes_model.pkl")
 with open(model_path, 'rb') as f:
     model = pickle.load(f)
+
+# Middleware to log requests
+@app.middleware("http")
+async def log_requests(request: Request, call_next):
+    start_time = time.time()
+    response = await call_next(request)
+    process_time = time.time() - start_time
+    logger.info(
+        f"{request.method} {request.url.path} - status: {response.status_code} - time: {process_time:.3f}s"
+    )
+    return response
 
 
 @app.post("/predict")
