@@ -1,0 +1,18 @@
+# Ignore SSH keys
+*.pem
+
+# Python related
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment
+.env
+diabetes-env/
+
+# Logs
+*.log
+
+# Docker
+*.tar
